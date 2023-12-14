@@ -231,4 +231,9 @@ public class Candidature {
 		prpdStmtInsert.close();
 	}
 	
+	public void ajouterAuPlanDeCours(Enseignement enseignement) throws SQLException {
+		insertCoursPlan(enseignement.getIdEnseignement(), this.idCandidature);
+		this.ajouterAListeEnseignements(enseignement);;
+	}
+	
 }

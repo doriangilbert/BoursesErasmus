@@ -88,7 +88,18 @@ public class Main extends Application {
 			EvaluationCandidature evaluationcandidature5 = new EvaluationCandidature(12, enseignant1, candidature3);
 			EvaluationCandidature evaluationcandidature6 = new EvaluationCandidature(14, enseignant3, candidature3);
 			
-			//TODO : Plan des cours
+            System.out.println("Ajout des plans de cours");
+            candidature1.ajouterAuPlanDeCours(enseignement5);
+            candidature1.ajouterAuPlanDeCours(enseignement7);
+            candidature1.ajouterAuPlanDeCours(enseignement8);
+            
+            candidature2.ajouterAuPlanDeCours(enseignement9);
+            candidature2.ajouterAuPlanDeCours(enseignement12);
+            
+            candidature3.ajouterAuPlanDeCours(enseignement1);
+            candidature3.ajouterAuPlanDeCours(enseignement2);
+            candidature3.ajouterAuPlanDeCours(enseignement3);
+            candidature3.ajouterAuPlanDeCours(enseignement4);
 			
 			System.out.println("Peuplement terminé.");
 			

@@ -97,7 +97,7 @@ public class Bourse {
 		return "Bourse [idBourse=" + idBourse + ", listeCandidatures=" + listeCandidatures + ", destination="
 				+ destination + "]";
 	}
-
+	
 	/**
 	 * Méthode publique permettant de créer la table Bourse
 	 * @throws SQLException
