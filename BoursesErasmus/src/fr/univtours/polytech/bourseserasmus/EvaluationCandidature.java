@@ -69,7 +69,7 @@ public class EvaluationCandidature {
 
 	@Override
 	public String toString() {
-		return "EvaluationCandidature [note=" + note + ", enseignant=" + enseignant + ", candidature=" + candidature
+		return "EvaluationCandidature [note=" + note + ", enseignant=" + enseignant.getNumEnseignant() + ", candidature=" + candidature.getIdCandidature()
 				+ "]";
 	}
 	

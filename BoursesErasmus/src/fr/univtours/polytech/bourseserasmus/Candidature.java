@@ -159,8 +159,7 @@ public class Candidature {
 	@Override
 	public String toString() {
 		return "Candidature [idCandidature=" + idCandidature + ", noteCandidature=" + noteCandidature + ", etudiant="
-				+ etudiant + ", listeEnseignements=" + listeEnseignements + ", bourse=" + bourse
-				+ ", listeEvaluationsCandidature=" + listeEvaluationsCandidature + "]";
+				+ etudiant.getNumEtudiant() + ", bourse=" + bourse.getIdBourse() + "]";
 	}
 
 	/**

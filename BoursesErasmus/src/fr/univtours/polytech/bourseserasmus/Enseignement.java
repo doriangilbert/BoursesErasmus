@@ -122,7 +122,7 @@ public class Enseignement {
 	@Override
 	public String toString() {
 		return "Enseignement [idEnseignement=" + idEnseignement + ", nomEnseignement=" + nomEnseignement
-				+ ", nbCredits=" + nbCredits + ", volumeHoraire=" + volumeHoraire + ", destination=" + destination
+				+ ", nbCredits=" + nbCredits + ", volumeHoraire=" + volumeHoraire + ", destination=" + destination.getIdDestination()
 				+ "]";
 	}
 

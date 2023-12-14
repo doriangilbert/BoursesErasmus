@@ -94,8 +94,8 @@ public class Bourse {
 
 	@Override
 	public String toString() {
-		return "Bourse [idBourse=" + idBourse + ", listeCandidatures=" + listeCandidatures + ", destination="
-				+ destination + "]";
+		return "Bourse [idBourse=" + idBourse + ", destination="
+				+ destination.getIdDestination() + "]";
 	}
 	
 	/**

@@ -159,8 +159,7 @@ public class Destination {
 	@Override
 	public String toString() {
 		return "Destination [idDestination=" + idDestination + ", nomDestination=" + nomDestination + ", nbPostesDispo="
-				+ nbPostesDispo + ", responsableLocal=" + responsableLocal + ", listeEnseignements="
-				+ listeEnseignements + ", listeBourses=" + listeBourses + "]";
+				+ nbPostesDispo + ", responsableLocal=" + responsableLocal + "]";
 	}
 
 	/**

@@ -119,8 +119,7 @@ public class Etudiant {
 	@Override
 	public String toString() {
 		return "Etudiant [numEtudiant=" + numEtudiant + ", nomEtudiant=" + nomEtudiant + ", prenomEtudiant="
-				+ prenomEtudiant + ", noteMoyenneDernierSemestre=" + noteMoyenneDernierSemestre + ", listeCandidatures="
-				+ listeCandidatures + "]";
+				+ prenomEtudiant + ", noteMoyenneDernierSemestre=" + noteMoyenneDernierSemestre + "]";
 	}
 
 	/**

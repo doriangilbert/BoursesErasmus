@@ -103,6 +103,42 @@ public class Main extends Application {
 			
 			System.out.println("Peuplement terminé.");
 			
+			System.out.println("Liste des objets créés :");
+			
+			System.out.println(etudiant1);
+			System.out.println(etudiant2);
+			System.out.println(enseignant1);
+			System.out.println(enseignant2);
+			System.out.println(enseignant3);
+			System.out.println(destination1);
+			System.out.println(destination2);
+			System.out.println(destination3);
+			System.out.println(bourse1);
+			System.out.println(bourse2);
+			System.out.println(bourse3);
+			System.out.println(enseignement1);
+			System.out.println(enseignement2);
+			System.out.println(enseignement3);
+			System.out.println(enseignement4);
+			System.out.println(enseignement5);
+			System.out.println(enseignement6);
+			System.out.println(enseignement7);
+			System.out.println(enseignement8);
+			System.out.println(enseignement9);
+			System.out.println(enseignement10);
+			System.out.println(enseignement11);
+			System.out.println(enseignement12);
+			System.out.println(candidature1);
+			System.out.println(candidature2);
+			System.out.println(candidature3);
+			System.out.println(evaluationcandidature1);
+			System.out.println(evaluationcandidature2);
+			System.out.println(evaluationcandidature3);
+			System.out.println(evaluationcandidature4);
+			System.out.println(evaluationcandidature5);
+			System.out.println(evaluationcandidature6);
+			
+			
 		} catch (SQLException ex) {
 			System.out.println("Erreur JDBC: " + ex);
 			System.exit(1);
