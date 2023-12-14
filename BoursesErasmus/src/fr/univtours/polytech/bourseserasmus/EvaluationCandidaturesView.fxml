@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.univtours.polytech.bourseserasmus.EvaluationCandidaturesController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label id="labelEvaluationCandidatures" layoutX="172.0" layoutY="31.0" text="Evaluation des candidatures">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tableViewEvaluationCandidatures" layoutX="18.0" layoutY="81.0" prefHeight="203.0" prefWidth="604.0">
+              <columns>
+                  <TableColumn fx:id="tableColumnIdCandidature" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="tableColumnIdBourse" prefWidth="75.0" text="ID Bourse" />
+                  <TableColumn fx:id="tableColumnNumEtudiant" prefWidth="75.0" text="Num Etudiant" />
+                  <TableColumn fx:id="tableColumnNomEtudiant" prefWidth="75.0" text="Nom Etudiant" />
+                  <TableColumn fx:id="tableColumnMoyenneSemestre" prefWidth="75.0" text="Moyenne semestre" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Label fx:id="labelSelectionnerOption" layoutX="36.0" layoutY="310.0" text="Veuillez sélectionner une candidature à noter :" />
+            <ComboBox fx:id="comboBoxCandidature" layoutX="301.0" layoutY="306.0" prefWidth="150.0" />
+            <Button fx:id="buttonNoterCandidature" layoutX="468.0" layoutY="295.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="118.0" text="Noter la candidature" textAlignment="CENTER" wrapText="true" onAction="#handleButtonNoterCandidature" />
+            <Button fx:id="buttonRetourAccueil" layoutX="265.0" layoutY="355.0" mnemonicParsing="false" text="Retourner à l'accueil" onAction="#handleButtonRetourAccueil" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
