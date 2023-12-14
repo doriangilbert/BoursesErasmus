@@ -4,10 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- * @author Administrateur
- *
- */
 public class Enseignement {
 
 	private int idEnseignement;
