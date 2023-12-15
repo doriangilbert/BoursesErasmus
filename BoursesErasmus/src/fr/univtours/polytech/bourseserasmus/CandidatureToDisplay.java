@@ -50,21 +50,21 @@ public class CandidatureToDisplay {
 		this.moyenneSemestre = new SimpleFloatProperty(moyenneSemestre);
 	}
 	
-//	/**
-//	 * @param idCandidature
-//	 * @param idBourse
-//	 * @param numEtudiant
-//	 * @param nomEtudiant
-//	 * @param noteCandidature
-//	 */
-//	public CandidatureToDisplay(int idCandidature, int idBourse, int numEtudiant, String nomEtudiant, float noteCandidature) {
-//		InitProperties();
-//		this.idCandidature = new SimpleIntegerProperty(idCandidature);
-//		this.idBourse = new SimpleIntegerProperty(idBourse);
-//		this.numEtudiant = new SimpleIntegerProperty(numEtudiant);
-//		this.nomEtudiant = new SimpleStringProperty(nomEtudiant);
-//		this.noteCandidature = new SimpleFloatProperty(noteCandidature);
-//	}
+	/**
+	 * @param idCandidature
+	 * @param idBourse
+	 * @param numEtudiant
+	 * @param nomEtudiant
+	 * @param noteCandidature
+	 */
+	public CandidatureToDisplay(int idCandidature, int idBourse, int numEtudiant, String nomEtudiant, double noteCandidature) {
+		InitProperties();
+		this.idCandidature = new SimpleIntegerProperty(idCandidature);
+		this.idBourse = new SimpleIntegerProperty(idBourse);
+		this.numEtudiant = new SimpleIntegerProperty(numEtudiant);
+		this.nomEtudiant = new SimpleStringProperty(nomEtudiant);
+		this.noteCandidature = new SimpleFloatProperty((float) noteCandidature);
+	}
 
 	public int getIdCandidature() {
 		return idCandidature.get();

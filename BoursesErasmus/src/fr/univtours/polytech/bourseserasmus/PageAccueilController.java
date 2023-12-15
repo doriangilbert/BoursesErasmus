@@ -75,4 +75,20 @@ public class PageAccueilController {
 		
 	}
 	
+	@FXML
+	protected void handleButtonListeCandidatures(ActionEvent event) throws IOException {
+//		try
+//		{
+//			Main.root = FXMLLoader.load(getClass().getResource("/fr/univtours/polytech/bourseserasmus/CandidaturesView.fxml"));
+//
+//			Scene scene = new Scene(Main.root, 640, 400);
+//
+//			Main.primaryStage.setScene(scene);
+//			Main.primaryStage.show();
+//
+//		} catch (Exception error) {
+//			error.printStackTrace();
+//		}
+	}
+	
 }
