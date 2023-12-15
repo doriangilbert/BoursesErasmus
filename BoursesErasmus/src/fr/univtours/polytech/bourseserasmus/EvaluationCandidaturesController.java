@@ -12,12 +12,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class EvaluationCandidaturesController {
-
+	
+	private static int idCandidatureANoter;
+	
 	@FXML
 	private TableView<CandidatureToDisplay> tableViewEvaluationCandidatures;
 	@FXML 
@@ -34,6 +37,17 @@ public class EvaluationCandidaturesController {
 	@FXML
 	private ComboBox<String> comboBoxCandidature;
 	
+	@FXML
+	private Label labelGetId;
+	
+	public static int getIdCandidatureANoter() {
+		return idCandidatureANoter;
+	}
+
+	public static void setIdCandidatureANoter(int idCandidatureANoter) {
+		EvaluationCandidaturesController.idCandidatureANoter = idCandidatureANoter;
+	}
+
 	@FXML
 	private void initialize() throws SQLException {
 		
@@ -81,7 +95,22 @@ public class EvaluationCandidaturesController {
 	
 	@FXML
 	protected void handleButtonNoterCandidature(ActionEvent event) throws IOException {
-		//TODO : Page de notation candidature
+		try
+		{
+			Main.root = FXMLLoader.load(getClass().getResource("/fr/univtours/polytech/bourseserasmus/NotationCandidatureView.fxml"));
+
+			Scene scene = new Scene(Main.root, 640, 400);
+
+			Main.primaryStage.setScene(scene);
+			Main.primaryStage.show();
+			
+			labelGetId = (Label) Main.root.lookup("#labelGetId");
+			labelGetId.setText(comboBoxCandidature.getValue());
+			
+			idCandidatureANoter = Integer.parseInt(comboBoxCandidature.getValue());
+		} catch (Exception error) {
+			error.printStackTrace();
+		}
 	}
 	
 	@FXML
@@ -94,14 +123,9 @@ public class EvaluationCandidaturesController {
 
 			Main.primaryStage.setScene(scene);
 			Main.primaryStage.show();
-		}
-
-		catch (Exception error)
-		{
+		} catch (Exception error) {
 			error.printStackTrace();
 		}
-		
-		
 	}
 	
 }

@@ -12,12 +12,26 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 
 public class PageAccueilController {
 
+	private static int idConnecte;
+	
 	@FXML
 	private ComboBox<String> comboBoxEnseignant;
 	
+	@FXML
+	private Label labelIdConnecte;
+	
+	public static int getIdConnecte() {
+		return idConnecte;
+	}
+
+	public static void setIdConnecte(int idConnecte) {
+		PageAccueilController.idConnecte = idConnecte;
+	}
+
 	@FXML
 	private void initialize() throws SQLException {
 		ObservableList<String> listeNumEnseignant = FXCollections.observableArrayList();
@@ -49,10 +63,12 @@ public class PageAccueilController {
 
 			Main.primaryStage.setScene(scene);
 			Main.primaryStage.show();
-		}
-
-		catch (Exception error)
-		{
+			
+			labelIdConnecte = (Label) Main.root.lookup("#labelIdConnecte");
+			labelIdConnecte.setText(comboBoxEnseignant.getValue());
+			
+			idConnecte = Integer.parseInt(comboBoxEnseignant.getValue());
+		} catch (Exception error) {
 			error.printStackTrace();
 		}
 		

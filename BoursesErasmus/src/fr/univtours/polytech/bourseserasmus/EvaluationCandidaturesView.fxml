@@ -13,6 +13,8 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
+            <Label id="labelConnecteEnTantQue" layoutX="14.0" layoutY="14.0" text="Connecté en tant que :" />
+            <Label id="labelIdConnecte" layoutX="14.0" layoutY="34.0" text="X" />
             <Label id="labelEvaluationCandidatures" layoutX="172.0" layoutY="31.0" text="Evaluation des candidatures">
                <font>
                   <Font size="24.0" />
@@ -32,8 +34,8 @@
             </TableView>
             <Label fx:id="labelSelectionnerOption" layoutX="36.0" layoutY="310.0" text="Veuillez sélectionner une candidature à noter :" />
             <ComboBox fx:id="comboBoxCandidature" layoutX="301.0" layoutY="306.0" prefWidth="150.0" />
-            <Button fx:id="buttonNoterCandidature" layoutX="468.0" layoutY="295.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="118.0" text="Noter la candidature" textAlignment="CENTER" wrapText="true" onAction="#handleButtonNoterCandidature" />
-            <Button fx:id="buttonRetourAccueil" layoutX="265.0" layoutY="355.0" mnemonicParsing="false" text="Retourner à l'accueil" onAction="#handleButtonRetourAccueil" />
+            <Button fx:id="buttonNoterCandidature" layoutX="468.0" layoutY="295.0" mnemonicParsing="false" onAction="#handleButtonNoterCandidature" prefHeight="47.0" prefWidth="118.0" text="Noter la candidature" textAlignment="CENTER" wrapText="true" />
+            <Button fx:id="buttonRetourAccueil" layoutX="265.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleButtonRetourAccueil" text="Retourner à l'accueil" />
          </children>
     </AnchorPane>
   </children>

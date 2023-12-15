@@ -85,13 +85,13 @@ public class Main extends Application {
 			Candidature candidature2 = new Candidature(etudiant1, bourse3);
 			Candidature candidature3 = new Candidature(etudiant2, bourse1);
 			
-			System.out.println("Peuplement EvaluationCandidature");
+			/*System.out.println("Peuplement EvaluationCandidature");
 			EvaluationCandidature evaluationcandidature1 = new EvaluationCandidature(18, enseignant2, candidature1);
 			EvaluationCandidature evaluationcandidature2 = new EvaluationCandidature(16, enseignant1, candidature1);
 			EvaluationCandidature evaluationcandidature3 = new EvaluationCandidature(15, enseignant3, candidature2);
 			EvaluationCandidature evaluationcandidature4 = new EvaluationCandidature(17, enseignant2, candidature2);
 			EvaluationCandidature evaluationcandidature5 = new EvaluationCandidature(12, enseignant1, candidature3);
-			EvaluationCandidature evaluationcandidature6 = new EvaluationCandidature(14, enseignant3, candidature3);
+			EvaluationCandidature evaluationcandidature6 = new EvaluationCandidature(14, enseignant3, candidature3);*/
 			
             System.out.println("Ajout des plans de cours");
             candidature1.ajouterAuPlanDeCours(enseignement5);
@@ -136,12 +136,12 @@ public class Main extends Application {
 			System.out.println(candidature1);
 			System.out.println(candidature2);
 			System.out.println(candidature3);
-			System.out.println(evaluationcandidature1);
+			/*System.out.println(evaluationcandidature1);
 			System.out.println(evaluationcandidature2);
 			System.out.println(evaluationcandidature3);
 			System.out.println(evaluationcandidature4);
 			System.out.println(evaluationcandidature5);
-			System.out.println(evaluationcandidature6);
+			System.out.println(evaluationcandidature6);*/
 			
 			
 		} catch (SQLException ex) {
