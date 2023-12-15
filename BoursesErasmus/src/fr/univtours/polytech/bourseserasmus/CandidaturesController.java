@@ -37,7 +37,7 @@ public class CandidaturesController {
 		tableColumnIdBourse.setCellValueFactory(new PropertyValueFactory<>("idBourse"));
 		tableColumnNumEtudiant.setCellValueFactory(new PropertyValueFactory<>("numEtudiant"));
 		tableColumnNomEtudiant.setCellValueFactory(new PropertyValueFactory<>("nomEtudiant"));
-		tableColumnNoteCandidature.setCellValueFactory(new PropertyValueFactory<>("noteSemestre"));
+		tableColumnNoteCandidature.setCellValueFactory(new PropertyValueFactory<>("noteCandidature"));
 		
 		ObservableList<CandidatureToDisplay> listCandidatures = FXCollections.observableArrayList();
 		
