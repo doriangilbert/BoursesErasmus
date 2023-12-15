@@ -1,7 +1,9 @@
 package fr.univtours.polytech.bourseserasmus;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class EvaluationCandidature {
 
@@ -97,15 +99,85 @@ public class EvaluationCandidature {
 	
 	public static void insertEvaluationCandidature(int numEnseignant, int idCandidature, float note) throws SQLException {
 		// Création d'un objet PreparedStatement permettant d'exécuter la requête SQL
-		PreparedStatement prpdStmtInsert = DatabaseLink.getConn().prepareStatement("INSERT IGNORE INTO Evalue(NumEnseignant, IdCandidature, Note) VALUES (?,?,?)");
+		PreparedStatement prpdStmtSelectEvaluations = DatabaseLink.getConn().prepareStatement("SELECT * FROM Evalue WHERE NumEnseignant = ? AND idCandidature = ?");
 		// Mise en place du PreparedStatement avec les paramètres
-		prpdStmtInsert.setInt(1, numEnseignant);
-		prpdStmtInsert.setInt(2, idCandidature);
-		prpdStmtInsert.setFloat(3, note);
-		// Execution de la requête du PreparedStatement
-		prpdStmtInsert.executeUpdate();
+		prpdStmtSelectEvaluations.setInt(1, numEnseignant);
+		prpdStmtSelectEvaluations.setInt(2, idCandidature);
+		//Exécution de la requête et stockage du résultat dans un objet ResulatSet
+		ResultSet rsSelectEvaluations = prpdStmtSelectEvaluations.executeQuery();
+		//Parcours du résultat et affichage des lignes
+		if(rsSelectEvaluations.next()) {
+			System.out.println("Candidature deja notee !");
+		}
+		else {
+			int nbNotes = 0;
+			
+			// Création d'un objet PreparedStatement permettant d'exécuter la requête SQL
+			PreparedStatement prpdStmtSelect = DatabaseLink.getConn().prepareStatement("SELECT COUNT(*) FROM Evalue WHERE idCandidature = ?");
+			// Mise en place du PreparedStatement avec les paramètres
+			prpdStmtSelect.setInt(1, idCandidature);
+			//Exécution de la requête et stockage du résultat dans un objet ResulatSet
+			ResultSet rs = prpdStmtSelect.executeQuery();
+			//Parcours du résultat et affichage des lignes
+			while (rs.next())
+			{
+				nbNotes = rs.getInt("COUNT(*)");
+			}
+			// Libération des ressources liées au PreparedStatement
+			prpdStmtSelect.close();
+			
+			if (nbNotes < 2) {
+				// Création d'un objet PreparedStatement permettant d'exécuter la requête SQL
+				PreparedStatement prpdStmtInsert = DatabaseLink.getConn().prepareStatement("INSERT IGNORE INTO Evalue(NumEnseignant, IdCandidature, Note) VALUES (?,?,?)");
+				// Mise en place du PreparedStatement avec les paramètres
+				prpdStmtInsert.setInt(1, numEnseignant);
+				prpdStmtInsert.setInt(2, idCandidature);
+				prpdStmtInsert.setFloat(3, note);
+				// Execution de la requête du PreparedStatement
+				prpdStmtInsert.executeUpdate();
+				// Libération des ressources liées au PreparedStatement
+				prpdStmtInsert.close();
+				
+				if (nbNotes == 1) {
+					ArrayList<Float> notes = new ArrayList<>();
+					
+					// Création d'un objet PreparedStatement permettant d'exécuter la requête SQL
+					PreparedStatement prpdStmtSelectE = DatabaseLink.getConn().prepareStatement("SELECT * FROM Evalue WHERE idCandidature = ?");
+					// Mise en place du PreparedStatement avec les paramètres
+					prpdStmtSelectE.setInt(1, idCandidature);
+					//Exécution de la requête et stockage du résultat dans un objet ResulatSet
+					ResultSet rsSelectE = prpdStmtSelectE.executeQuery();
+					//Parcours du résultat et affichage des lignes
+					while (rsSelectE.next())
+					{
+						notes.add(rsSelectE.getFloat("Note"));
+					}
+					// Libération des ressources liées au PreparedStatement
+					prpdStmtSelectE.close();
+					
+					calculNoteCandidature(idCandidature, notes.get(0), notes.get(1));
+				}
+			} else {
+				System.out.println("Deja deux notes !");
+			}
+		}
 		// Libération des ressources liées au PreparedStatement
-		prpdStmtInsert.close();
+		prpdStmtSelectEvaluations.close();
+		
 	}
+	
+	public static void calculNoteCandidature(int idCandidature, float note1, float note2) throws SQLException {
+		float moyenneCandidature = (note1 + note2)/2;
+		
+		// Création d'un objet PreparedStatement permettant d'exécuter la requête SQL
+		PreparedStatement prpdStmtUpdate = DatabaseLink.getConn().prepareStatement("UPDATE Candidature SET NoteCandidature = ? WHERE IdCandidature = ?");
+		// Mise en place du PreparedStatement avec les paramètres
+		prpdStmtUpdate.setFloat(1, moyenneCandidature);
+		prpdStmtUpdate.setInt(2, idCandidature);
+		// Execution de la requête du PreparedStatement
+		prpdStmtUpdate.executeUpdate();
+		// Libération des ressources liées au PreparedStatement
+		prpdStmtUpdate.close();
+}
 	
 }

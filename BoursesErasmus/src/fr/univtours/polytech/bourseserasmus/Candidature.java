@@ -235,6 +235,4 @@ public class Candidature {
 		this.ajouterAListeEnseignements(enseignement);;
 	}
 	
-	//TODO : Gérer la valeur par défaut d'une candidature n'ayant pas ses deux notes et gérer le calcul de la note dans les deux notes sont faites
-	
 }
