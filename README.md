@@ -1,5 +1,18 @@
 # BoursesErasmus
 
+## Table des matières
+
+- [Présentation](#présentation)
+    - [Contenu](#contenu)
+- [Conception](#conception)
+    - [Schéma de la base de données](#schéma-de-la-base-de-données)
+    - [Diagramme de classes](#diagramme-de-classes)
+- [Manuel de l'utilisateur](#manuel-de-lutilisateur)
+    - [Outils nécessaires](#outils-nécessaires)
+    - [Installation](#installation)
+    - [Utilisation](#utilisation)
+- [Images de l'application](#images-de-lapplication)
+
 ## Présentation
 
 Projet de programmation d'une application liée à une base de données permettant de gérer des bourses Erasmus. Projet réalisé dans le cadre du module "Lien SGBD - Langage OO" du septième semestre du cycle ingénieur de Polytech Tours.
